@@ -1443,22 +1443,22 @@ public:
 	</dict>
 	<dict>
 		<key>IDECodeSnippetCompletionPrefix</key>
-		<string>tq_custom_dispatch</string>
+		<string>mt_ctm_dispatch</string>
 		<key>IDECodeSnippetCompletionScopes</key>
 		<array>
 			<string>CodeBlock</string>
 		</array>
 		<key>IDECodeSnippetContents</key>
-		<string>    dispatch_queue_t urls_queue = dispatch_queue_create("com.elctech.image_queue", NULL);
-	    
-	    dispatch_async(urls_queue, ^{
-	        [self getImageUrls];
-	        dispatch_async(dispatch_get_main_queue(), ^{
-	            [self downloadImages];
-	        });
-	    });
-	    
-	    dispatch_release(urls_queue);</string>
+		<string>dispatch_queue_t <#queueName#> = dispatch_queue_create("com.dorayo.<#queueName#>", DISPATCH_QUEUE_<#CONCURRENT#>);
+    
+    dispatch_async(<#queueName#>, ^{
+        // time-consuming process
+        <#code#>
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // update UI
+            <#code#>
+        });
+    });</string>
 		<key>IDECodeSnippetIdentifier</key>
 		<string>1C071233-5D65-4101-9C7C-A43509BB57B8</string>
 		<key>IDECodeSnippetLanguage</key>
