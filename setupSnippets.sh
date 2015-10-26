@@ -1,9 +1,13 @@
 #!/bin/bash
-#mv /Users/`user`/Library/Developer/Xcode/UserData/CodeSnippets /Users/`user`/Library/Developer/Xcode/UserData/CodeSnippets.bak
 
-mv /Users/`user`/Desktop/CodeSnippets /Users/`user`/Desktop/CodeSnippets.bak
+DST_DIR=/Users/`users`/Library/Developer/Xcode/UserData/CodeSnippets
+
+if [ -d $DST_DIR ]; then
+    mv /Users/`users`/Library/Developer/Xcode/UserData/CodeSnippets /Users/`users`/Library/Developer/Xcode/UserData/CodeSnippets.bak
+fi
+
 
 SRC_HOME=`pwd`
-ln -s ${SRC_HOME}/CodeSnippets /Users/`user`/Desktop/CodeSnippets
+cp -r ${SRC_HOME}/CodeSnippets/* $DST_DIR
 echo "done"
 
