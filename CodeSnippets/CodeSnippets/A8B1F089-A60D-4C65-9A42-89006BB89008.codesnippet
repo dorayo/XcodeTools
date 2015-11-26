@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mt_search_controller</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)setupSearchController
+{
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    _searchController.searchResultsUpdater = self;
+    _searchController.hidesNavigationBarDuringPresentation = YES;
+    _searchController.dimsBackgroundDuringPresentation = NO;
+    
+    [_searchController.searchBar sizeToFit];
+    
+    self.tableView.tableHeaderView = _searchController.searchBar;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A8B1F089-A60D-4C65-9A42-89006BB89008</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>MT Search Controller</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MT Search Controller</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
